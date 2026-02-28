@@ -42,7 +42,11 @@ venv.bak/
 # Data and models - Models are regenerated at runtime to keep repo lightweight
 # For persistent model storage, train models locally and store them here
 data/
-models/
+# Allow committed models for distribution
+!models/
+models/*.pkl
+models/*.pickle  
+models/*.joblib
 *.pkl
 *.pickle
 *.joblib
