@@ -10,7 +10,7 @@ xgboost>=1.5.0
 # Visualization Libraries
 matplotlib>=3.4.0
 seaborn>=0.11.0
-altair
+altair==4.2.3
 # Model Serialization
 joblib>=1.0.0
 
