@@ -1,9 +1,16 @@
 # Heart Disease ML Classification - End-to-End Machine Learning Project
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=flat&logo=python) ![Tests](https://img.shields.io/badge/Tests-pytest-green?style=flat) ![Docker](https://img.shields.io/badge/Docker-Supported-blue?style=flat&logo=docker) ![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-yellow?style=flat&logo=github-actions) ![License](https://img.shields.io/badge/License-MIT-green?style=flat)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=flat&logo=python) ![Tests](https://img.shields.io/badge/Tests-pytest-green?style=flat) ![Docker](https://img.shields.io/badge/Docker-Supported-blue?style=flat&logo=docker) ![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-yellow?style=flat&logo=github-actions) ![License](https://img.shields.io/badge/License-MIT-green?style=flat) ![Codecov](https://img.shields.io/codecov/c/github/KanakAcharya/Heart-Disease-ML-Classification?style=flat&logo=codecov) ![Trivy](https://img.shields.io/badge/Security-Trivy%20Scanned-blue?style=flat&logo=security)
 
 ## Overview
 This is a comprehensive end-to-end machine learning classification project that predicts the presence of heart disease in patients. The project demonstrates a complete ML pipeline including data exploration, preprocessing, feature engineering, model training, and evaluation.
+
+## ✨ Quick Links
+
+- 🚀 **[Try the Live Demo](https://share.streamlit.io/kanakach arya/Heart-Disease-ML-Classification/main/app.py)** (Streamlit Cloud)
+- 📖 **[Full Documentation](https://github.com/KanakAcharya/Heart-Disease-ML-Classification/blob/main/README.md)**
+- 📊 **[View Models Comparison](https://github.com/KanakAcharya/Heart-Disease-ML-Classification#key-metrics)**
+- 🐳 **[Docker Setup Guide](https://github.com/KanakAcharya/Heart-Disease-ML-Classification#docker-setup)**
 
 ## Dataset
 - **Source**: UCI Machine Learning Repository (Cleveland Heart Disease Dataset)
