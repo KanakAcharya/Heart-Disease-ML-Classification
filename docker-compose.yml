@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  heart-disease-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      - FLASK_APP=app.py
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    networks:
+      - ml-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+  # Optional: Add a reverse proxy service (nginx) for production
+  # nginx:
+  #   image: nginx:latest
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf
+  #   depends_on:
+  #     - heart-disease-app
+  #   networks:
+  #     - ml-network
+
+networks:
+  ml-network:
+    driver: bridge
+
+volumes:
+  data:
+  models:
