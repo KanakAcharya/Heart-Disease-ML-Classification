@@ -38,3 +38,13 @@ kaleido>=0.2.0
 # Jupyter Notebook
 jupyter>=1.0.0
 ipython>=7.0.0
+
+# Test Dependencies & Coverage
+pytest-xdist>=2.5.0
+pytest-timeout>=2.1.0
+pytest-mock>=3.6.0
+
+# Linting and Type Checking
+pylint>=2.12.0
+mypy>=0.910
+pydocstyle>=6.2.0
