@@ -10,6 +10,7 @@ xgboost>=1.5.0
 # Visualization Libraries
 matplotlib>=3.4.0
 seaborn>=0.11.0
+altair
 # Model Serialization
 joblib>=1.0.0
 
@@ -26,7 +27,6 @@ flake8>=3.9.0
 isort>=5.0.0
 
 # Advanced ML & Explainability
-shap>=0.42.0
 imbalanced-learn>=0.10.0
 scikit-optimize>=0.9.0
 
