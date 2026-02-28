@@ -122,5 +122,119 @@ Data Science Portfolio - Machine Learning
 ## License
 MIT License
 
+
+## Advanced Features
+
+### Testing Framework
+- **Pytest**: Comprehensive unit and integration tests
+- **Test Coverage**: Full coverage for data preprocessing and model training
+- **Fixtures**: Pytest fixtures for reproducible test data
+- **Coverage Reports**: CI/CD integration with Codecov
+
+### Docker Support
+- **Containerization**: Complete Docker support for reproducible environments
+- **Image**: Multi-stage builds for optimized container size
+- **Deployment**: Ready for cloud deployment (AWS, GCP, Azure)
+
+### Code Quality
+- **Linting**: Pylint, Flake8 for code quality checks
+- **Type Checking**: Mypy for static type analysis
+- **Formatting**: Black code formatter for consistent style
+- **Documentation**: Comprehensive docstrings and module documentation
+
+### Continuous Integration/Continuous Deployment
+- **GitHub Actions**: Automated testing on Python 3.8, 3.9, 3.10
+- **Security Scanning**: Trivy vulnerability scanner integration
+- **Code Coverage**: Automatic coverage reports and tracking
+- **Docker Build**: Automated Docker image creation and testing
+
+## Installation & Setup
+
+### Local Development
+
+```bash
+# Clone the repository
+git clone https://github.com/KanakAcharya/Heart-Disease-ML-Classification.git
+cd Heart-Disease-ML-Classification
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Docker Setup
+
+```bash
+# Build Docker image
+docker build -t heart-disease-classifier:latest .
+
+# Run container
+docker run -p 8501:8501 heart-disease-classifier:latest
+
+# Access Streamlit app at http://localhost:8501
+```
+
+## Running Tests
+
+```bash
+# Run all tests
+pytest tests/ -v
+
+# Run with coverage report
+pytest tests/ -v --cov=src --cov-report=html
+
+# Run specific test file
+pytest tests/test_preprocessing.py -v
+
+# Run with parallel execution (faster)
+pytest tests/ -v -n auto
+```
+
+## Project Highlights
+
+- ✅ **Production-Ready Code**: Follows best practices and PEP 8 standards
+- ✅ **Comprehensive Documentation**: Detailed docstrings and README
+- ✅ **Automated Testing**: 100% test coverage for core modules
+- ✅ **CI/CD Pipeline**: GitHub Actions workflow for automated testing and deployment
+- ✅ **Docker Support**: Containerized application for easy deployment
+- ✅ **Model Explainability**: SHAP analysis for model interpretability
+- ✅ **Data Validation**: Robust data preprocessing and validation
+- ✅ **Performance Optimization**: Hyperparameter tuning and model optimization
+
+## Key Metrics
+
+| Model | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
+|-------|----------|-----------|--------|----------|----------|
+| Logistic Regression | 83.33% | 84.62% | 78.57% | 81.48% | 0.9498 |
+| Random Forest | 85.00% | 88.00% | 78.57% | 83.02% | 0.9397 |
+| XGBoost | 85.00% | 88.00% | 78.57% | 83.02% | 0.8996 |
+
+## Project Roadmap
+
+See [IMPROVEMENTS.md](IMPROVEMENTS.md) for detailed information about:
+- Planned enhancements and features
+- Development priorities
+- Timeline estimates
+- Architecture improvements
+
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project.
+
+## Deployment
+
+For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
+
+## Contact & Support
+
+- GitHub: [@KanakAcharya](https://github.com/KanakAcharya)
+- Issues: [GitHub Issues](https://github.com/KanakAcharya/Heart-Disease-ML-Classification/issues)
+
+---
+
+**Note**: This project is maintained for educational and portfolio purposes. For production medical applications, please consult with healthcare professionals and ensure compliance with relevant regulations.
 ## Contact
 For questions or collaborations, please reach out via GitHub.
