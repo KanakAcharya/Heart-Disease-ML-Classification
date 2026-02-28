@@ -39,7 +39,8 @@ venv.bak/
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# Data and models
+# Data and models - Models are regenerated at runtime to keep repo lightweight
+# For persistent model storage, train models locally and store them here
 data/
 models/
 *.pkl
