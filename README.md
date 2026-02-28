@@ -235,6 +235,111 @@ For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ---
 
+## Core Modules (src/)
+
+The modular architecture separates concerns into independent, testable components:
+
+### data_preprocessing.py
+- **DataPreprocessor Class**: Handles all data preparation tasks
+  - `load_data()`: Load CSV files with error handling
+  - `check_missing_values()`: Identify and handle missing values
+  - `handle_missing_values()`: Imputation strategies
+  - `get_features()`: Extract feature columns
+  - `handle_outliers()`: Detect and handle outliers
+  - `normalize_data()`: StandardScaler normalization
+  - Full test coverage in `tests/test_preprocessing.py`
+
+### model_trainer.py
+- **ModelTrainer Class**: End-to-end model training pipeline
+  - `train_logistic_regression()`: Logistic Regression classifier
+  - `train_random_forest()`: Random Forest with tuned hyperparameters
+  - `train_xgboost()`: XGBoost gradient boosting
+  - `save_model()`: Serialize trained models using joblib
+  - `load_model()`: Load pre-trained models
+  - Comprehensive test coverage in `tests/test_model_trainer.py`
+
+### model_evaluator.py
+- **ModelEvaluator Class**: Performance metrics and analysis
+  - Classification metrics (accuracy, precision, recall, F1)
+  - ROC-AUC and confusion matrix generation
+  - Cross-validation scoring
+  - Model comparison utilities
+
+### hyperparameter_tuning.py
+- **HyperparameterTuner Class**: Automated hyperparameter optimization
+  - GridSearchCV for exhaustive parameter search
+  - RandomizedSearchCV for large parameter spaces
+  - Cross-validation integration
+  - Best parameters tracking and reporting
+
+### shap_analysis.py
+- **SHAPAnalyzer Class**: Model explainability and interpretability
+  - SHAP value computation for feature importance
+  - Force plots for individual predictions
+  - Summary plots for global feature importance
+  - Model agnostic explanations
+
+## Live Demo Deployment
+
+### Streamlit Cloud (Recommended)
+
+1. **Push code to GitHub** (already done)
+2. **Create Streamlit account**: Visit https://share.streamlit.io
+3. **Deploy app**:
+   ```
+   - Click "New app"
+   - Select your GitHub repository
+   - Set main file path to: app.py
+   - Click Deploy
+   ```
+4. **Access your app**: https://share.streamlit.io/[YourUsername]/[RepoName]/main/app.py
+
+### Alternative Deployment Options
+
+#### Heroku (Free tier deprecated, use paid or alternatives)
+```bash
+# Create Procfile
+echo 'web: sh setup.sh && streamlit run app.py' > Procfile
+
+# Push to Heroku
+git push heroku main
+```
+
+#### AWS EC2
+- Launch t2.micro instance
+- Install Python 3.9 and dependencies
+- Run: `streamlit run app.py --server.port 80`
+
+#### Google Cloud Run
+```bash
+echo 'FROM python:3.9-slim
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+CMD ["streamlit", "run", "app.py"]' > Dockerfile
+
+# Deploy
+gcloud run deploy heart-disease-classifier --source .
+```
+
+## Model Artifacts
+
+**Note on .pkl Model Files**: To keep the repository lightweight and enable CI/CD testing without cached artifacts:
+- Trained models are NOT committed to the repository
+- Models are regenerated during the Streamlit app startup
+- The application trains models on first load (training takes ~5 seconds)
+- For production deployments with persistent models:
+  - Train models locally: `python src/model_trainer.py`
+  - Save models: `joblib.dump(model, 'models/model_name.pkl')`
+  - Commit to `.gitignore` to prevent large file bloat
+
+## Documentation Files
+
+- **README.md** (this file): Project overview and getting started
+- **IMPROVEMENTS.md**: Detailed roadmap for enhancements
+- **DEPLOYMENT.md**: Advanced deployment strategies
+- **CONTRIBUTING.md**: Guidelines for contributors
+
 **Note**: This project is maintained for educational and portfolio purposes. For production medical applications, please consult with healthcare professionals and ensure compliance with relevant regulations.
 ## Contact
 For questions or collaborations, please reach out via GitHub.
