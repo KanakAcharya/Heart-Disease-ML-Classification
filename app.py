@@ -78,7 +78,7 @@ def train_models_on_startup():
     rf_model = RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)
     rf_model.fit(X_train_scaled, y_train)
     
-    xgb_model = XGBClassifier(n_estimators=100, random_state=42, use_label_encoder=False, eval_metric='logloss', verbosity=0)
+    xgb_model = XGBClassifier(n_estimators=100, random_state=4 , eval_metric='logloss', verbosity=0)
     xgb_model.fit(X_train_scaled, y_train)
     
     st.success("✅ Models trained successfully!")
