@@ -106,7 +106,7 @@ print(f"   Model saved to models/random_forest_model.pkl")
 
 # 3. XGBoost
 print("\n3. Training XGBoost...")
-xgb_model = XGBClassifier(n_estimators=100, random_state=42, use_label_encoder=False,
+xgb_model = XGBClassifier(n_estimators=100, random_state=42,
                           eval_metric='logloss', verbosity=0)
 xgb_model.fit(X_train_scaled, y_train)
 xgb_train_score = xgb_model.score(X_train_scaled, y_train)
