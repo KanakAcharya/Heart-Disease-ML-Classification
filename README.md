@@ -7,7 +7,7 @@ This is a comprehensive end-to-end machine learning classification project that 
 
 ## ✨ Quick Links
 
-- 🚀 **[Try the Live Demo](https://share.streamlit.io/kanakach arya/Heart-Disease-ML-Classification/main/app.py)** (Streamlit Cloud)
+- 🚀 **[Try the Live Demo](https://share.streamlit.io/kanakacharya/Heart-Disease-ML-Classification/main/app.py)** (Streamlit Cloud)
 - 📖 **[Full Documentation](https://github.com/KanakAcharya/Heart-Disease-ML-Classification/blob/main/README.md)**
 - 📊 **[View Models Comparison](https://github.com/KanakAcharya/Heart-Disease-ML-Classification#key-metrics)**
 - 🐳 **[Docker Setup Guide](https://github.com/KanakAcharya/Heart-Disease-ML-Classification#docker-setup)**
